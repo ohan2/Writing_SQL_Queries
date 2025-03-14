@@ -106,4 +106,6 @@ GROUP BY product_category_id;
 
 -- 5. Get the top three selling products based on the number of orders.
 
-SELECT
+SELECT product_id, COUNT(*) as order_count 
+FROM orders GROUP BY product_id ORDER BY order_count DESC 
+LIMIT 3;
